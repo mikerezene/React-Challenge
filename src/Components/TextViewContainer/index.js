@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import TextareaAutosize from 'react-textarea-autosize';
 
 export const  TextViewContainer = styled.div`
 

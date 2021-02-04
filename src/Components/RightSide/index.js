@@ -5,5 +5,6 @@ flex: 75%;
 height: 100%;
 display:flex;
 flex-direction: column;
+
 `
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const  ScrollContainer = styled.div`
 
-overflow:scroll;
+overflow-y:scroll;
 height:100%;
 background-color: #fdfdfd;
 border-radius: 6px;

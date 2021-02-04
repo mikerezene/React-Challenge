@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import logo from '../../assets/send.png'
 
 export const ImageContainer = styled.div`
 height:  "50px";

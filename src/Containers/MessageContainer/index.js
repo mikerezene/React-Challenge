@@ -2,7 +2,6 @@ import React,{useState, useEffect} from 'react';
 import MessageList from '../MessageList';
 import MessageBody from '../MessageBody';
 import faker from 'faker';
-import moment from 'moment';
 import { Container, RightSide , LeftSide } from '../../Components';
 
 const MessageContainer = () => {
@@ -24,18 +23,14 @@ const MessageContainer = () => {
    }
 
    
-
-
-
     useEffect(() => {
         fakeArray1.map(() => {
             let tempmessages = [];
             let userName = faker.name.findName();
             let photo = `${faker.image.people()}?random=${Date.now()}`;
-            let time = faker.time.recent();
             fakeArray2.map((item) => {
 
-                tempmessages.push({listOfMessages : faker.lorem.sentences(), time: getTime() , shuffle : item});
+               return  tempmessages.push({listOfMessages : faker.lorem.sentences(), time: getTime() , shuffle : item});
             })
 
             return setMessages( (prevState) =>  [...prevState , { username : userName, photo : photo , messageAndTime : tempmessages}])
@@ -48,11 +43,6 @@ const MessageContainer = () => {
     const handleComponentClicked = (username) => {
         setClickedAndUsername({ componentClicked : true , username : username});
    }
-
-   useEffect(() => {
-    console.log("This is the messages",messages);
-   },[messages])
-
 
 
    const handleAddMessage = (newMessage) => {

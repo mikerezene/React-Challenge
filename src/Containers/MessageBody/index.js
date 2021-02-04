@@ -1,9 +1,7 @@
-import React, { useState ,useEffect} from 'react';
-import { UserInfo , ChatBody,FormContainer, ImageContainer,InputStyle,Button,TextViewContainer,MessagesTobeScrolled } from '../../Components';
+import React, { useState } from 'react';
+import { UserInfo , ChatBody,FormContainer, ImageContainer,InputStyle,TextViewContainer,MessagesTobeScrolled } from '../../Components';
 import TextareaAutosize from 'react-textarea-autosize'
 import sendButton from '../../assets/send.png';
-import faker from 'faker';
-import moment from 'moment'
 
 const MessageBody = ({componentClicked , handleAddMessage,messages, username}) => {
 
@@ -11,6 +9,10 @@ const MessageBody = ({componentClicked , handleAddMessage,messages, username}) =
 
     const handleChange = (e) => {
           setInputText(e.target.value)
+    }
+
+    const handleSubmit = () => {
+        setInputText("",handleAddMessage(inputText))
     }
 
     return (
@@ -53,8 +55,8 @@ const MessageBody = ({componentClicked , handleAddMessage,messages, username}) =
                         </MessagesTobeScrolled>
                             <FormContainer>
                             <InputStyle value={inputText}onChange={handleChange }placeholder="Write your message here"/>
-                            <div onClick={() => handleAddMessage(inputText)}>
-                            <img src= {sendButton} style={{ width:40}}/>
+                            <div onClick={handleSubmit}>
+                            <img src= {sendButton} style={{ width:40}} alt="icon"/>
                           </div>
                         
                             </FormContainer>
@@ -64,6 +66,10 @@ const MessageBody = ({componentClicked , handleAddMessage,messages, username}) =
                         </>
                     )
                 }
+                return (
+                    <>
+                    </>
+                )
             })
         }
         </>
